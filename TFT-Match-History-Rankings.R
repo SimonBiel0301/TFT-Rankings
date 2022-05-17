@@ -36,14 +36,12 @@ getPlayersGameIDsURL = paste0(baseURLMatches, getMatchHistoryById, encryptedPUUI
 # Get player's match history
 matchHistoryRequest = GET(getPlayersGameIDsURL)
 contentMatchHistory = content(matchHistoryRequest)
-print(contentMatchHistory)
 getMatchByIDURL = "/tft/match/v1/matches/"
 
 # Variable for all ranks the given Player achieved
 placements = c()
 
 for ( id in contentMatchHistory){
-  print(id)
   # define Request-URL
   matchRequestURL = paste0(baseURLMatches,getMatchByIDURL,id,"?",apiKey)
   # Get Data for Match
@@ -57,7 +55,6 @@ for ( id in contentMatchHistory){
     if (p$puuid == encryptedPUUID){
       # Add Rank to variable
       placements = c(placements, p$placement)
-      print(p$placement)
     }
   }
 }
