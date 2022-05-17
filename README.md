@@ -1,5 +1,5 @@
 # TFT-Rankings
-> Just-for-fun project, don't take it too seriously
+> Just-for-fun project to learn making use of API's.
 
 ## What does the script do?
 
